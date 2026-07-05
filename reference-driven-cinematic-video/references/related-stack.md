@@ -12,31 +12,17 @@ Use this file when deciding which project, skill, or framework to combine for a 
 - `generate-image`, `imagegen`, `gemini-image`, `brand-guidelines`, `frontend-design`: use only when the video needs stronger visuals or a brand-consistent art direction.
 - `hyperframes:hyperframes` / `hyperframes:gsap`: use when the reference is closer to HTML/GSAP kinetic typography than React component logic.
 
-## External Projects To Consider
+## Implementation Capabilities
 
-- `YPAAAAAAAAAAAAA/cyclorama-curved-screen`: source inspiration for concave screens and projection surface behavior. https://github.com/YPAAAAAAAAAAAAA/cyclorama-curved-screen
-- `remotion-dev/remotion`: React-based programmatic video engine. https://github.com/remotion-dev/remotion
-- `remotion-dev/template-three`: Remotion + React Three Fiber starter for 3D scenes and screens. https://github.com/remotion-dev/template-three
-- `remotion.dev/docs/three`: official rules for `@remotion/three`, video textures, and OpenGL renderer. https://www.remotion.dev/docs/three
-- `remotion.dev/docs/videos/as-threejs-texture`: current Remotion video-texture route using `@remotion/media` `<Video headless />` and `onVideoFrame`. https://www.remotion.dev/docs/videos/as-threejs-texture
-- `remotion.dev/docs/gl-options`: renderer backend guidance for WebGL/Three renders. https://www.remotion.dev/docs/gl-options
-- `remotion.dev/docs/captions`: official caption import, transcription, display, and subtitle export docs. https://www.remotion.dev/docs/captions/
-- `remotion-dev/template-prompt-to-motion-graphics-saas`: prompt-to-motion-graphics architecture with validation, skill detection, constants-first code, and live preview. https://github.com/remotion-dev/template-prompt-to-motion-graphics-saas
-- `lifeprompt-team/remotion-scenes`: reusable Remotion motion-graphics scene library; useful for text reveals, transitions, and After Effects-like patterns. https://github.com/lifeprompt-team/remotion-scenes
-- `reactvideoeditor/remotion-templates`: many self-contained Remotion templates for charts, text, transitions, branding, images, and media. https://github.com/reactvideoeditor/remotion-templates
-- `ali-abassi/remotion-templates`: AI-agent-oriented Remotion template index and SKILL.md patterns. https://github.com/ali-abassi/remotion-templates
-- `motion-canvas/motion-canvas`: TypeScript motion graphics with generator timelines and editor; useful for explainer videos synced to voice. https://github.com/motion-canvas/motion-canvas
-- `motion-canvas/examples`: runnable Motion Canvas examples for parallax, code, diagrams, and explanatory motion. https://github.com/motion-canvas/examples
-- `redotvideo/revideo`: Motion Canvas-style TypeScript scenes with headless/API-oriented rendering; treat as experimental until locally proven. https://github.com/redotvideo/revideo
-- `Manim Community`: precise programmatic diagrams and technical explainers; use as insert clips, not default cinematic layer. https://docs.manim.community/en/stable/
-- `airbnb/lottie-web`: browser-rendered AE/Bodymovin vector animation for icon loops, loaders, and motion accents. https://github.com/airbnb/lottie-web
-- `Rive runtimes`: stateful vector/brand animations when a `.riv` asset exists. https://rive.app/docs/runtimes/getting-started
-- `heygen-com/hyperframes`: plain HTML to video for agents; useful when a reference is mostly DOM layout, typography, GSAP, and browser-native composition. https://github.com/heygen-com/hyperframes
-- `heygen-com/hyperframes-launch-video`: full production example with sub-compositions, GSAP, Lottie, shaders, Three.js, captions, SFX, script, and storyboard. https://github.com/heygen-com/hyperframes-launch-video
-- `nexu-io/html-video`: agentic HTML-to-video project with templates and FFmpeg MP4 output; use as pattern source or experimental prototype route. https://github.com/nexu-io/html-video
-- `nateherkai/hyperframes-student-kit`: HyperFrames example workbench; useful as a source of HTML/GSAP timeline patterns. https://github.com/nateherkai/hyperframes-student-kit
-- `faster-whisper`: local ASR route for transcripts and SRT QA when available. https://github.com/SYSTRAN/faster-whisper
-- `ElevenLabs TTS / voice cloning docs`: premium TTS and authorized voice-clone route when configured. https://elevenlabs.io/docs/overview/capabilities/text-to-speech
+Use this as a routing map, not as a public list of reference projects.
+
+- Programmatic video rendering: reusable templates, timeline control, audio sync, props, preview, MP4 render.
+- Three-dimensional screen work: product/device shots, curved screens, self-lit media textures, parallax, WebGL render preflight.
+- HTML/CSS motion rendering: kinetic typography, web-style layouts, shader accents, vector inserts, fast social clips.
+- Explanatory vector animation: process explainers, diagrams, system flows, and narration-synced construction.
+- Caption and transcript tooling: import, generate, normalize, burn in, and export `.srt`.
+- Voice provider routing: user recording, user API, authorized voice clone, premium TTS, or default Mandarin neural voice.
+- FFmpeg delivery checks: decode, loudness, silence, black frames, freezes, contact sheets, and final artifact validation.
 
 ## Routing
 

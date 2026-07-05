@@ -87,10 +87,10 @@ Voice is a quality gate, not decoration.
 Provider order:
 
 1. real user/client recording
-2. cloned or premium neural voice with permission
-3. MiniMax/ElevenLabs-class neural TTS if configured
-4. Edge TTS only for draft or low-stakes preview
-5. no-voice/music-first cut if voice quality harms the video
+2. user-provided voiceover, TTS, or voice-clone API with permission
+3. cloned or premium neural voice with permission
+4. default Mandarin neural TTS when no recording or API is available
+5. no-voice/music-first cut only if the default voice harms the video and the user accepts that downgrade
 
 Never ship macOS `say` as final. Avoid generic TTS cadences by:
 
@@ -100,7 +100,7 @@ Never ship macOS `say` as final. Avoid generic TTS cadences by:
 - rendering an audio sample before final video
 - loudness-normalizing and mixing with a restrained bed
 
-If the user asks for their own timbre, first verify the supplied sample is usable: it should contain clean speech, not background music or silence. If the sample is silent, clipped, noisy, or not the user's voice, say so plainly and request a 20-60 second clean sample. If the voice still sounds fake after one serious attempt, stop and state the voice blocker. Offer a no-voice cut or ask for a real voice sample.
+If the user asks for their own timbre, first verify the supplied sample is usable: it should contain clean speech, not background music or silence. If the sample is silent, clipped, noisy, or not the user's voice, say so plainly and request a 20-60 second clean sample. If no usable recording or user API is available, use the default Mandarin neural voice and state that it is not a user-voice clone. If the voice still sounds fake after one serious attempt, stop and state the voice blocker.
 
 When a voiceover is present, subtitles are required unless the user explicitly says no subtitles. Create both burned-in captions for the MP4 and a sidecar `.srt` when possible.
 

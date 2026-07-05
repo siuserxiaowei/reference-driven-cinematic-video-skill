@@ -7,12 +7,13 @@ Use this when a video needs Chinese narration, user-like timbre, cloned voice, s
 Prefer this order:
 
 1. Clean user or client recording.
-2. User-authorized voice clone from a clean sample.
-3. Premium neural TTS such as MiniMax, Alibaba/Qwen/CosyVoice, ElevenLabs, Azure Custom Neural Voice, Tencent Cloud TTS, or OpenAI TTS when configured and auditioned.
-4. Edge TTS only for draft or internal preview.
-5. No-voice/music-first cut when available voices hurt the product.
+2. User-provided voiceover, TTS, or voice-clone API with clear permission and retention expectations.
+3. User-authorized voice clone from a clean sample.
+4. Premium neural TTS when configured and auditioned.
+5. Default Mandarin neural TTS when no recording or API is available.
+6. No-voice/music-first cut only if the default voice hurts the product and the user accepts that downgrade.
 
-Never claim voice cloning worked unless a usable sample was actually used. Do not upload a voice sample until ownership/permission, provider, purpose, audience, retention risk, and deletion needs are clear.
+Never claim voice cloning worked unless a usable sample was actually used. Do not upload a voice sample until ownership/permission, provider, purpose, audience, retention risk, and deletion needs are clear. If using the default voice, label it as default synthetic narration, not user timbre.
 
 ## Sample Requirements
 
@@ -24,6 +25,23 @@ A user-timbre sample should be:
 - Not silent or near-silent. Check with `ffmpeg -af volumedetect`; a sample with mean/max around -90 dB is unusable.
 
 If the reference video is silent, say it is silent and ask for a real sample. Do not synthesize a "same timbre" voice from silence.
+
+## API Route
+
+If the user has a preferred voice provider or internal API, use that route before the default voice. Record the minimum needed setup in working notes:
+
+```text
+provider:
+voice_id or preset:
+language:
+style:
+input script:
+output file:
+permission/source:
+retention or deletion requirement:
+```
+
+Do not hard-code secrets into the repo. Use the user's existing local environment or secure secret flow.
 
 ## Chinese Narration Style
 

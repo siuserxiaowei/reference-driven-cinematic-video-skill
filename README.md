@@ -2,7 +2,7 @@
 
 一个面向 Codex 的产品视频生产 skill：把产品介绍、网站、文档、功能清单或参考视频，转成带研究补全、分镜、配音、字幕、特效路线和质量闸门的产品介绍片工作流。
 
-它不是“把文字塞进 PPT 模板”。这个 skill 的目标是让 Codex 像一个小型视频制片流程一样工作：先理解产品和参考风格，再补全事实与视觉证据，最后用 Remotion、Three.js、HyperFrames、Motion Canvas、FFmpeg 等工具生成并校验成片。
+它不是“把文字塞进 PPT 模板”。这个 skill 的目标是让 Codex 像一个小型视频制片流程一样工作：先理解产品和参考风格，再补全事实与视觉证据，最后选择合适的视频、3D、动效、配音、字幕和质检工具生成成片。
 
 ## 适合什么场景
 
@@ -33,14 +33,14 @@
    有旁白就默认要字幕：烧录字幕进 MP4，并尽量同时输出 `.srt`。
 
 7. **Motion Build**
-   根据参考风格路由到 Remotion、Remotion + Three、HyperFrames 或 Motion Canvas。
+   根据参考风格选择合适的程序化视频、3D 曲面屏、网页动效或向量动画实现路线。
 
 8. **Quality Gate**
    交付前必须跑 `quality_check_video.py`，低于 80 分默认只能叫 draft。
 
-## Cyclorama 曲面屏标准
+## 曲面屏风格标准
 
-如果参考是 `YPAAAAAAAAAAAAA/cyclorama-curved-screen` 这类效果，skill 会要求：
+如果参考是曲面屏、沉浸式屏幕、Cyclorama 或类似科技感展示效果，skill 会要求：
 
 - 使用真实 bent mesh，不用 CSS 假透视。
 - 默认 `PlaneGeometry(3.2, 1.8, 64, 20)`。
@@ -51,20 +51,20 @@
 
 ## 配音与字幕标准
 
-配音优先级：
+最好的配音路线：
 
-1. 真实用户/客户录音。
-2. 用户授权的自定义/克隆音色。
-3. MiniMax、Alibaba/Qwen/CosyVoice、ElevenLabs、Azure、Tencent、OpenAI 等可用且试音通过的神经 TTS。
-4. Edge TTS 只能作为草稿。
-5. macOS `say` 不允许作为最终成片。
+1. 用户提供自己的干净录音，直接用真实声音或作为授权音色样本。
+2. 用户接入自己已有的配音、TTS 或 voice-clone API，由 skill 走该 API 生成音频。
+3. 如果没有录音，也没有可用 API，就使用默认中文神经音色生成旁白，并明确它不是用户音色克隆。
+
+默认音色也要先出 10-15 秒样音。听感不行就调脚本、语速、音高和混音，不把明显廉价的配音硬塞进最终片。macOS `say` 不允许作为最终成片。
 
 中文口播规则：
 
 - 5-10 句短口语。
 - 少讲抽象价值，多讲真实工作场景。
 - 避免“赋能、无缝、革命性、生态闭环、行业领先”等广告腔。
-- 先出 10-15 秒样音，听起来不行就停，不把烂配音硬塞进最终片。
+- 先出 10-15 秒样音，听起来不行就调，不把烂配音硬塞进最终片。
 
 ## 质量检查脚本
 
@@ -135,26 +135,16 @@ python3 ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py \
 - FFmpeg / ffprobe
 - Node.js
 
-常用视频栈：
+可选实现能力：
 
-- Remotion
-- Three.js / React Three Fiber
-- `@remotion/media`
-- `@remotion/captions`
-- HyperFrames
-- Motion Canvas
+- 程序化视频渲染
+- 3D 曲面屏 / 产品展示
+- 网页动效转视频
+- 旁白生成或外部配音 API 接入
+- 字幕生成、烧录和 SRT 导出
+- FFmpeg 质检与交付检查
 
-配音能力取决于你本地或云端可用的 TTS/voice-clone provider。没有高质量人声或授权音色时，skill 会把最终成片降级为草稿或建议无旁白版本。
-
-## 参考项目
-
-- [YPAAAAAAAAAAAAA/cyclorama-curved-screen](https://github.com/YPAAAAAAAAAAAAA/cyclorama-curved-screen)
-- [Remotion](https://github.com/remotion-dev/remotion)
-- [Remotion Three.js texture docs](https://www.remotion.dev/docs/videos/as-threejs-texture)
-- [Remotion captions docs](https://www.remotion.dev/docs/captions/)
-- [HyperFrames](https://github.com/heygen-com/hyperframes)
-- [HyperFrames launch video](https://github.com/heygen-com/hyperframes-launch-video)
-- [Motion Canvas](https://github.com/motion-canvas/motion-canvas)
+配音能力取决于用户提供的录音或用户接入的 API。没有录音和 API 时，skill 会使用默认中文神经音色，并在交付说明里标注“默认音色，非克隆用户声音”。
 
 ## 许可证
 
