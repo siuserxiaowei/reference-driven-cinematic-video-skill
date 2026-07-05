@@ -114,17 +114,117 @@ python3 ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py \
 
 ## 使用示例
 
+### 示例成片
+
+下面这条 HerClaw 产品介绍片，是用这套工作流生成并做过字幕、配音、色调和质量检查的一版样片。
+
+<video src="examples/herclaw/herclaw-product-intro-cinematic-subtitled-v2-final.mp4" controls width="100%"></video>
+
+- 视频文件：[examples/herclaw/herclaw-product-intro-cinematic-subtitled-v2-final.mp4](examples/herclaw/herclaw-product-intro-cinematic-subtitled-v2-final.mp4)
+- 抽帧检查图：
+
+![HerClaw 产品介绍片抽帧](examples/herclaw/contact-sheet.jpg)
+
+### 案例提示词
+
+#### 1. 柔和温暖风产品介绍片
+
+适合 ToB 服务、团队协作工具、AI 助手、知识库、内部系统等不想太冷硬的产品。
+
 ```text
 用 $reference-driven-cinematic-video
 
 这是我的产品介绍：
-<产品文档或网站链接>
+<产品文档链接 1>
+<产品文档链接 2>
 
-目标：30-40 秒产品介绍片，中文配音，偏高级科技感。
-参考这个视频风格：
-<参考视频路径或链接>
+目标：30-40 秒产品介绍片，中文配音，偏柔和温暖风。
+
+配音要求：
+优先使用我提供的录音或我接入的配音 API。
+如果我没有提供录音/API，就使用默认中文神经音色，并在交付说明里标注“默认音色，非克隆用户声音”。
 
 你自己搜索补全，最后给我成片。
+```
+
+#### 2. 高级科技感产品发布片
+
+适合 AI 硬件、开发者工具、自动化系统、数据产品、Agent 平台。
+
+```text
+用 $reference-driven-cinematic-video
+
+这是我的产品介绍：
+<产品文档、官网或功能说明>
+
+目标：30-40 秒产品介绍片，中文配音，高级科技感。
+画面希望有曲面屏、UI 宏观特写、代码流或任务流动效。
+
+请你搜索补全产品定位和用户痛点，写口播稿、分镜、字幕，并生成最终成片。
+```
+
+#### 3. 带参考视频的风格复刻
+
+适合已经有目标审美，希望 Codex 先拆参考片的镜头语法，再套到自己的产品上。
+
+```text
+用 $reference-driven-cinematic-video
+
+产品介绍：
+<产品说明或文档链接>
+
+参考视频：
+<本地视频路径或公开视频链接>
+
+目标：45 秒以内，中文配音，保留参考视频的节奏、镜头语言、字幕风格和转场感觉。
+不要照抄参考视频里的品牌或内容，只学习它的视觉结构。
+
+请先分析参考视频，再生成我的产品成片。
+```
+
+#### 4. 使用自己的录音或配音 API
+
+适合对“AI 味配音”敏感的正式宣传片。
+
+```text
+用 $reference-driven-cinematic-video
+
+产品介绍：
+<产品说明>
+
+配音素材：
+<我的 20-60 秒干净人声样本路径>
+
+或者使用我的配音 API：
+provider: <API 名称>
+voice_id: <音色 ID>
+style: 温暖、可信、自然，不要播音腔
+
+目标：30-60 秒产品介绍片，中文配音，带字幕。
+
+如果录音不可用，请直接说明原因；不要把默认音色说成我的声音。
+```
+
+#### 5. 修复已有低质量视频
+
+适合已经生成过一版，但有 PPT 感、没字幕、配音难听、画面脏灰、节奏散等问题。
+
+```text
+用 $reference-driven-cinematic-video
+
+已有视频：
+<本地视频路径>
+
+产品介绍：
+<产品文档或说明>
+
+问题：
+- 没有字幕
+- 配音太 AI
+- 画面太灰或太像 PPT
+- 节奏不够像正式产品片
+
+请重新做一版，并跑质量检查后再交付。
 ```
 
 ## 依赖建议
