@@ -116,11 +116,21 @@ python3 ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py \
 
 ### 示例成片
 
-下面这条 HerClaw 产品介绍片，是用这套工作流生成并做过字幕、配音、色调和质量检查的一版样片。
+下面这条 HerClaw 产品介绍片，是用这套工作流生成并做过字幕、配音、色调和质量检查的一版样片。最新版优先处理了“配音有杂音”的问题：去掉环境铺底，重新生成干净人声，并重新做响度与限峰。
+
+<video src="examples/herclaw/herclaw-warm-product-intro-clean-final.mp4" controls width="100%"></video>
+
+- 干净音频版视频：[examples/herclaw/herclaw-warm-product-intro-clean-final.mp4](examples/herclaw/herclaw-warm-product-intro-clean-final.mp4)
+- 质检结果：`score=100`，`mean=-18.8 dB`，`max=-2.9 dB`，无长黑屏、长静音、冻帧或解码错误。
+- 抽帧检查图：
+
+![HerClaw 温暖风产品介绍片抽帧](examples/herclaw/herclaw-warm-product-intro-clean-contact-sheet.jpg)
+
+保留上一版作为对照：
 
 <video src="examples/herclaw/herclaw-product-intro-cinematic-subtitled-v2-final.mp4" controls width="100%"></video>
 
-- 视频文件：[examples/herclaw/herclaw-product-intro-cinematic-subtitled-v2-final.mp4](examples/herclaw/herclaw-product-intro-cinematic-subtitled-v2-final.mp4)
+- 对照视频：[examples/herclaw/herclaw-product-intro-cinematic-subtitled-v2-final.mp4](examples/herclaw/herclaw-product-intro-cinematic-subtitled-v2-final.mp4)
 - 抽帧检查图：
 
 ![HerClaw 产品介绍片抽帧](examples/herclaw/contact-sheet.jpg)

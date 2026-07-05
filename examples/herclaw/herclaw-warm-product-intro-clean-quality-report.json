@@ -1,0 +1,54 @@
+{
+  "video": "/Users/siuserxiaowei/Documents/龙虾盒子/herclaw-cyclorama-promo-video/renders/warm-final/herclaw-warm-product-intro-clean-final.mp4",
+  "out": "/Users/siuserxiaowei/Documents/龙虾盒子/herclaw-cyclorama-promo-video/renders/warm-final/herclaw-warm-product-intro-clean-final",
+  "decode_ok": true,
+  "hard_fail": false,
+  "score": 100,
+  "min_score": 80,
+  "passed": true,
+  "gates": {
+    "decode": {
+      "status": "pass",
+      "message": "ffmpeg decode produced no errors"
+    },
+    "streams": {
+      "status": "pass",
+      "message": "video and expected audio streams present"
+    },
+    "audio_loudness": {
+      "status": "pass",
+      "message": "volume in target: mean=-18.8 dB, max=-2.9 dB"
+    },
+    "subtitles": {
+      "status": "pass",
+      "message": "sidecar SRT exists: /Users/siuserxiaowei/Documents/龙虾盒子/herclaw-cyclorama-promo-video/public/subtitles/herclaw-warm.srt"
+    },
+    "black_frames": {
+      "status": "pass",
+      "message": "no blackdetect intervals"
+    },
+    "silence": {
+      "status": "pass",
+      "message": "no long silence intervals"
+    },
+    "freezes": {
+      "status": "pass",
+      "message": "no freezedetect intervals"
+    },
+    "artifacts": {
+      "status": "pass",
+      "message": "contact sheet created: /Users/siuserxiaowei/Documents/龙虾盒子/herclaw-cyclorama-promo-video/renders/warm-final/herclaw-warm-product-intro-clean-final/contact-sheet.jpg"
+    }
+  },
+  "metrics": {
+    "duration": 39.0,
+    "mean_volume_db": -18.8,
+    "max_volume_db": -2.9
+  },
+  "contact_sheet": "/Users/siuserxiaowei/Documents/龙虾盒子/herclaw-cyclorama-promo-video/renders/warm-final/herclaw-warm-product-intro-clean-final/contact-sheet.jpg",
+  "probe": "/Users/siuserxiaowei/Documents/龙虾盒子/herclaw-cyclorama-promo-video/renders/warm-final/herclaw-warm-product-intro-clean-final/probe.json",
+  "volume": "/Users/siuserxiaowei/Documents/龙虾盒子/herclaw-cyclorama-promo-video/renders/warm-final/herclaw-warm-product-intro-clean-final/volume.txt",
+  "blackdetect": "/Users/siuserxiaowei/Documents/龙虾盒子/herclaw-cyclorama-promo-video/renders/warm-final/herclaw-warm-product-intro-clean-final/blackdetect.txt",
+  "silencedetect": "/Users/siuserxiaowei/Documents/龙虾盒子/herclaw-cyclorama-promo-video/renders/warm-final/herclaw-warm-product-intro-clean-final/silencedetect.txt",
+  "freezedetect": "/Users/siuserxiaowei/Documents/龙虾盒子/herclaw-cyclorama-promo-video/renders/warm-final/herclaw-warm-product-intro-clean-final/freezedetect.txt"
+}
