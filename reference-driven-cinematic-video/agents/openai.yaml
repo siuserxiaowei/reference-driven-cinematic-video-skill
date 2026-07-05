@@ -1,0 +1,4 @@
+interface:
+  display_name: "Reference Cinematic Video"
+  short_description: "Research-backed cinematic product video workflow"
+  default_prompt: "Use $reference-driven-cinematic-video to turn this product brief or reference video into a researched, narrated, subtitled, quality-gated cinematic promo."

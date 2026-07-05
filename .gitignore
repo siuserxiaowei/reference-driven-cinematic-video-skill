@@ -1,0 +1,14 @@
+.DS_Store
+__pycache__/
+*.pyc
+.env
+.env.*
+node_modules/
+dist/
+build/
+renders/
+*.mp4
+*.mov
+*.wav
+*.mp3
+*.m4a
